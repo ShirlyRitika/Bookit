@@ -1,19 +1,18 @@
 import axios from "axios";
 
-// Use .env value if present, otherwise fallback to localhost:5000
-const API_BASE = "https://bookit-backend-clmg.onrender.com/"
+const API_BASE = "https://bookit-backend-clmg.onrender.com";
 
 export const api = axios.create({
   baseURL: API_BASE,
 });
 
 // Experience Endpoints
-export const getExperiences = () => api.get("/experiences");
-export const getExperience = (id: string) => api.get(`/experiences/${id}`);
+export const getExperiences = () => api.get("/api/experiences");
+export const getExperience = (id: string) => api.get(`/api/experiences/${id}`);
 
 // Bookings
-export const createBooking = (payload: any) => api.post("/bookings", payload);
+export const createBooking = (payload: any) => api.post("/api/bookings", payload);
 
-// Promo
+// Promo (if used)
 export const validatePromo = (code: string) =>
-  api.post("/promo/validate", { code });
+  api.post("/api/promo/validate", { code });
