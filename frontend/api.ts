@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Use .env value if present, otherwise fallback to localhost:5000
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE = "https://bookit-backend-clmg.onrender.com/"
 
 export const api = axios.create({
   baseURL: API_BASE,
